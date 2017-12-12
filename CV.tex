@@ -1,0 +1,351 @@
+\documentclass[11pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{fontspec,xltxtra,xunicode}
+\usepackage{fontspec, graphicx}
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+%%\usepackage{hyperref}
+%%\usepackage[usenames]{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[colorlinks, linkcolor=blue, urlcolor=blue, breaklinks, pdftitle={Huan Truong Resume},pdfauthor={Truong,Huan}]{hyperref}
+
+
+
+\usepackage{natbib}
+\usepackage{bibentry}
+
+\nobibliography*
+
+
+\newcommand{\ignore}[1]{}
+\newcommand{\nobibentry}[1]{{\let\nocite\ignore\bibentry{#1}}}
+% apsrev entries in the text need definitions of these commands
+\newcommand{\bibfnamefont}[1]{#1}
+\newcommand{\bibnamefont}[1]{#1}
+
+
+\defaultfontfeatures{Mapping=tex-text}
+%%\setromanfont[Mapping=tex-text,BoldFont="Arial Bold"]{Arial}
+%%\setsansfont[Mapping=tex-text,BoldFont="Arial Bold"]{Arial}
+%% \setmonofont[Scale=MatchLowercase]{Andale Mono}
+\setsansfont[
+BoldFont=Roboto-Regular.ttf,
+ItalicFont=Roboto-LightItalic.ttf,
+BoldItalicFont=Roboto-Bold.ttf
+]{Roboto-Light.ttf}
+\setromanfont[
+BoldFont=Roboto-Regular.ttf,
+ItalicFont=Roboto-LightItalic.ttf,
+BoldItalicFont=Roboto-Bold.ttf
+]{Roboto-Light.ttf}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=0.5in,rmargin=0.5in,headheight=0in,headsep=0in,footskip=.1in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{HUAN TRUONG}
+\newcommand{\phone}{htruong@tnhh.net}
+\newcommand{\email}{Github: \href{https://github.com/htruong/}{github.com/htruong}}
+\newcommand{\phonealt}{(+1) 858-848-7635}
+\newcommand{\emailalt}{Google Scholar: \href{https://scholar.google.com/citations?user=ZTuFnawAAAAJ}{Huan Truong N.H.}}
+
+\newcommand{\smallprint}[1]{\fontsize{10pt}{13pt}\selectfont #1}%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\selectfont\Large\fontspec{Roboto-Regular.ttf}\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\textbf\selectfont\Large\fontspec{Roboto-Thin.ttf}\textcolor{Sepia}{#1}}
+	\begin{itemize}[topsep=6pt]
+	\vspace{0pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-3pt}
+	\item
+	\textbf{#1} \hfill \textit{#3}\\
+	\smallprint{#2}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{\smallprint{#3}}
+	\vspace{-2pt}
+	\begin{smallprint}
+%	\begin{itemize}
+}{
+%	\end{itemize}
+	\end{smallprint}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+
+\definecolor{Gray}{rgb}{.7,.7,.7}
+
+
+\bibliographystyle{hep}
+% \hfill \includegraphics[width=2.5cm]{qr_ht.eps}
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \phone \hfill \email}
+
+\vspace{-1pt} {\small\itshape \phonealt \hfill \emailalt}
+
+\vspace{8 pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{ressection}{Objective}
+
+%	\ressubitem{Exploring new horizons for the masses through research on big data.}
+
+%\end{ressection}
+%\vspace{8 pt}
+
+\textit{I am seeking an opportunity to combine my interdisciplinary science, engineering, security experience to solve new, emerging problems. }
+
+\vspace{8 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+
+    \begin{ressubsec}{University of Missouri -- Columbia, MO}{PhD Candidate in Bioinformatics.}{Aug 2012 -- Dec 2017}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Truman State University -- Kirksville, MO}{Bachelor of Science in Computer Science. Graduated with Department Honors.}{Jan 2008 -- Dec 2011}
+	\end{ressubsec}
+	
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{ressection}{Undergraduate Research and Work}
+
+%        \resitem{H. Truong, Improving Peer-learning Effectiveness with Natural Dialog in SimStudent, \textit{Summer research project for Undergraduate, Carnegie Mellon University}, Jul 2011.}
+	
+%        \resitem{D. Bindner, H. Truong. Creating Thin-Client Workstations Using Ubuntu, presentation, \textit{HELIX Conference, Missouri Research and Education Network}, Mar 2011.}
+
+%        \resitem{Team 9872: S. Smith, H. Truong, et al, Honorable Award for Discrete Problem's Solution, \textit{The Mathematical Contest in Modeling (MCM) 2011, Truman State University}, Apr 2011.}
+        %%\resitem{\textbf{Workarounds for Vietnamese characters for application title bars}. PCWorld Vietnam. Hanoi, Vietnam. Jan 2002 Issue.}
+%\end{ressection}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{ressection}{Awards \& Mentions}
+
+%\end{ressection}
+%\vspace{8 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Technical Skills}
+		
+        \resitem{\textbf{Computer Science}: \textit{Heterogeneous GPU algorithms and performance analysis}: Especially bioinformatics algorithms, modeling biological networks, network analysis, quantitative analysis.}
+
+        \resitem{\textbf{Architecture-specific Software Development}: Android app development, heterogeneous parallel systems (\textit{CUDA}), embedded processors (TI MSP, AVR, ARM), embedded software development, \href{https://verify.edxonline.org/cert/e8322a7ae5cb463496f1ab2414c19596}{elementary electronics}.}
+    % \href{https://verify.edxonline.org/cert/e8322a7ae5cb463496f1ab2414c19596}{electronics}.
+	%%% \begin{reslist}{Other technical skills:}
+	%%% \end{reslist}
+	
+	    \resitem{\textbf{Cryptography and Security}: Basic  cryptography, hardware hacking, security bug hunter.}
+	
+		%% \resitem{\textbf{Linguistics}: Basic natural language processing.}
+
+		\resitem{\textbf{Programming languages}: Strong understanding of C/CUDA, Go. Intermediate understanding of Java, PHP, HTML/CSS, JavaScript, Python.}
+		
+		\resitem{\textbf{Tools}: Git, LaTeX, data visualization (R), network visualization, UNIX Shell.}
+
+%		\resitem{\textbf{Languages}: English (Advanced), \textit{Vietnamese} (Native).}
+		
+%		\resitem{\textbf{Github profile}: \href{https://github.com/htruong/}{htruong}, \textbf{Google Scholar profile}: \href{https://scholar.google.com/citations?user=ZTuFnawAAAAJ}{Huan Truong N.H.}}
+
+\end{ressection}
+\vspace{8 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Professional Experience}
+
+    \begin{ressubsec}{Missouri Informatics Institute, University of Missouri -- Columbia, MO}{Research and Teaching Assistant. Evolutionary Systems Lab.}{Aug 2012 -- Present}
+    	\begin{itemize}[noitemsep, topsep=0pt]
+        \item{Conducted research on filtering noise from multi-dimensional biological data using high-performance computing.}
+        \item{Published 4 papers on sequence alignment, taxonomic clustering, motif finding -- achieved 40x speedup with GPU.}
+        \item{Acted as teaching assistant for introductory molecular biology class and delivered graduate-level guest lectures.}
+        \end{itemize}
+    \end{ressubsec}
+    
+    \begin{ressubsec}{Agency for Science, Technology and Research (A*STAR) -- Singapore}{Research Officer. Dr. Pauline Ng's Research Group.}{May -- Aug 2015}
+    \begin{itemize}[noitemsep, topsep=0pt]
+        \item{Conducted preliminary research on implementing \textbf{factpub.org}, an automated fact-extraction engine from scientific publications.}
+        \item{Spearheaded the creation of a Chrome and Firefox extension that allows researchers to annotate and collaborate on the annotation of academic papers using PDF.js and Annotator.js framework, to provide an open knowledge social network.}
+        %\item{Implemented a back-end server to allow sharing, uploading of annotations and collaboration between users.}
+        \end{itemize}
+    \end{ressubsec}
+
+    \begin{ressubsec}{Human-Computer Interaction Institute, Carnegie Mellon University -- Pittsburgh, PA}{Summer REU Intern. Pittsburgh Science of Learning Center.}{May -- Jul 2011}
+		\begin{itemize}[noitemsep, topsep=0pt]
+        \item{Conducted research on enhancing conversational capability for simulated agent leading to more effective learning-by-teaching with elementary algebra.}
+        \item{Analyzed corpuses of human input and studied patterns in students' shallow answers to develop more comprehensive questioning engine that would result in deeper understanding of methods and materials for student.}
+        \item{Implemented code in Java and conducted experiments to study the effectiveness of enhanced engine.}
+        \end{itemize}
+      \end{ressubsec}
+      
+      \newpage
+
+    \begin{ressubsec}{IT Services, Truman State University -- Kirksville, MO}{Software and Web Developer.}{Mar 2008 -- Aug 2012}
+    	\begin{itemize}[noitemsep, topsep=0pt]
+    	\item{Deployed and installed new infrastructures and automated monitor-and- control systems for the whole campus.}
+        \item{Orchestrated the customization, programming, and implementation of low cost, open hardware (Chumby) to replace embedded control devices infrastructure in classrooms. Cost reduction result: 1/20 original cost.}
+        \item{Diagnosed and provided hand-on repair of network, software, and hardware related issues. Created software to report and display live statistics of all computers campus-wide.}
+        \item{Created cross-platform school mobile app, websites, and maintained code repository for internal IT infrastructure.}
+        % \ressubitem{Created and maintained some on-campus pages, notably \href{http://its.truman.edu/justforstudents}{Just For Students}, based on Wordpress.}
+        %%\ressubitem{Manager: Amy Nunan, anunan@truman.edu.}
+        \end{itemize}
+    \end{ressubsec}
+
+%%    \begin{ressubsec}{Rossmap Simulation Software Company}{Hanoi, Vietnam}{System Administrator: November, 2007--November, 2008}
+%%        \ressubitem{Designed and maintained corporate network and website.}
+%%        \ressubitem{Installed, maintained and conduct support for GPS handhelds and Nautical Simulation Systems.}
+	%%\ressubitem{Manager: Trung Quan, trungqx@rossmap.com.vn.}
+%%    \end{ressubsec}
+\end{ressection}
+\vspace{8 pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{ressection}{Research Areas}
+%	\begin{reslist}{}
+
+%	\resitem{\textbf{Informatics}: \textit{High performance computing}, modeling biologoical networks with graph theory, bioinformatics, data mining, cryptography.}
+
+%    \resitem{\textbf{Architecture-specific Software Development}: Android app development, heterogeneous parallel systems (emph. \textit{NVIDIA CUDA}), embedded processors (TI MSP, AVR, ARM), embedded software development.}
+    % \href{https://verify.edxonline.org/cert/e8322a7ae5cb463496f1ab2414c19596}{electronics}.
+	%%% \begin{reslist}{Other technical skills:}
+	%%% \end{reslist}
+
+%    \resitem{\textbf{Linguistics}: Natural language processing.}
+    
+%	\end{reslist}
+
+%\end{ressection}
+%\vspace{8 pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Extracurricular Activities \& Recognition}
+
+    \begin{ressubsec}{High Altitude Balloon (HAB) Education -- \href{http://www.hab.education}{hab.education}}{Co-Founder with Dustin Mayfield-Jones}{Oct 2014 -- Present}
+    	\begin{itemize}[noitemsep, topsep=0pt]
+    	\item{Provided opportunities for junior and high school students to get involved in STEM by working on HAB launches to near space.}
+    	\item{Designed and engineered software, tracking hardware and lesson plans, participated in events, organized work-shops, networking events, planned interviews, and other organizational activities.}
+        \end{itemize}
+    \end{ressubsec}
+    
+
+    \begin{ressubsec}{Security bug hunter, firmware developer, hardware hacker}{Independent}{2012 -- Present}
+    	\begin{itemize}[noitemsep, topsep=0pt]
+    	\item{Recognized in reputable security bug hunting programs: Google Vulnerability Reward Program, Facebook "Whitehat" Security Program.}
+    	\item{Developed patches for the LEDE embedded Linux for routers, and CyanogenMod, to bring up new devices.}
+    	\item{Developed methods to disable the Intel Management Engine on laptops.}
+        \end{itemize}
+    \end{ressubsec}
+    
+
+    \begin{ressubsec}{On-Campus Student Activities}{Various leadership positions}{}
+    	\begin{itemize}[noitemsep, topsep=0pt]
+    	\item{University of Missouri Informatics Institute: Secretary (2016), Treasurer (2015), Symposium Organizing Committee Member \& Webmaster (2013-2016).}
+    	\item{University of Missouri Vietnamese Student Association and the Vietnamese Institute: Event Organizing Committee Member \& Treasurer (2015-2016), Webmaster (2014-2016).}
+    	\item{Truman State University Free Software Club of Kirksville: President (2011-2012).}
+        \end{itemize}
+    \end{ressubsec}
+    
+    \begin{ressubsec}{Programming Projects}{Full list of projects can be found at \href{http://www.tnhh.net/projects.html}{www.tnhh.net/projects.html}}{}
+    	\begin{itemize}[noitemsep, topsep=0pt]
+    	\item{\href{https://play.google.com/store/apps/details?id=com.htruong.inputmethod.latin}{Android Sophia Keyboard}: Smart keyboard, utilizing fuzzy word matching to enable fast Vietnamese input.}
+	    \item{\href{http://hackaday.com/2011/02/27/google-two-factor-authentication-in-a-wristwatch/}{Two-Factor Authentication in a Wristwatch}. General time-based (SHA256+MD5) two-factor authentication system on the Texas Instrument Chronos watch MSP430 platform that runs for years on one cell battery.}
+	    \item{\href{https://github.com/htruong/go-md2}{Go-md2}: MD2 hashing implementation in Go programming language.}
+	    \item{\href{http://talc.truman.edu/iso/}{Truck, Thin Ubuntu-based distribution}: A Linux distribution designed to boot on diskless, low-cost, distributed compiler client workstations for on-campus computer labs.}
+        \end{itemize}
+    \end{ressubsec}
+    
+\end{ressection}
+\vspace{8 pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Selected Peer-reviewed Publications}
+
+\resitem{\smallprint{\bibentry{truonglarge}}}
+
+\resitem{\smallprint{\bibentry{todd2016parallel}}}
+
+\resitem{\smallprint{\bibentry{ellison2013diet}}}
+
+\resitem{\smallprint{\bibentry{6567598}}}
+
+\end{ressection}
+\vspace{8 pt}
+
+
+%\textit{References are available upon request.}
+
+\nobibliography{\jobname}
+
+\end{document}
