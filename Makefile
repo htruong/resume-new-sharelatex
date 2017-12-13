@@ -1,7 +1,7 @@
 LATEXCOMPILER=xelatex
 BIBCOMPILER=bibtex
 
-TARGET=CV_ac_HuanTruong
+TARGET=CV
 
 all: $(TARGET)
 
